@@ -27,7 +27,7 @@ const Key = ({keypad}) => {
 
                 try {
 
-                    if (keypad.key === 'AC' || inputValue === 'ERROR') {
+                    if (keypad.key === 'AC' || inputValue === 'ERROR' || inputValue.length > 100) {
                         clearAction()
                         checkDecimalAction(false)
                     } else if (keypad.key === '=') {
@@ -53,7 +53,8 @@ const Key = ({keypad}) => {
                         checkDecimalAction(false)
                         inputAction(keypad.key)
                     } else if (inputValue.length > 100) {
-                        alert(`Digit Limit Reached : ${inputValue.length - 1}`)
+                        clearAction()
+                        inputAction(`DIGIT LIMIT REACHED ${inputValue.length}`)
                     } else {
                         inputAction(keypad.key)
                         return console.log('key clicked', keypad.key)
