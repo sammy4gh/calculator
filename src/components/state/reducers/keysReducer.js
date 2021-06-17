@@ -1,9 +1,10 @@
 
 
 const keys =[
-    {   class:['ac', 'first-section'],
-        id:'ac',
-        key:'AC'
+    {
+        class: ['ac', 'first-section'],
+        id: 'clear',
+        key: 'AC'
     },
     {
         class:['operator', 'first-section'],
@@ -80,26 +81,28 @@ const keys =[
         id:'decimal',
         key:'.'
     },
-    {   class:['equal', 'fifth-section'],
-        id:'equal',
-        key:'='
+    {
+        class: ['equal', 'fifth-section'],
+        id: 'equals',
+        key: '='
     },
-
-
-
-
-
-
-
 
 ]
 
-const keysReducer =(state = keys, action)=>{
+export const keysReducer = (state = keys, action) => {
     switch (action.type) {
         default:
             return state;
     }
 }
 
+export const checkOperators = (state = false, action) => {
+    switch (action.type) {
+        case 'check':
+            return action.payload
+        default:
+            return state;
+    }
+}
 
-export default keysReducer;
+

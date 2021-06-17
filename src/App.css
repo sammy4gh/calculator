@@ -21,13 +21,15 @@
   height: 600px;
   border-radius: 10px;
   margin: 2em auto auto;
-  display:grid;
+  display: grid;
   grid-template-rows: 1fr 2fr;
 }
-#ac{
-  grid-area: ac;
+
+#clear {
+  grid-area: clear;
 }
-#divide{
+
+#divide {
   grid-area: divide;
 }
 #multiply{
@@ -70,15 +72,18 @@
 #zero{
   grid-area: zero;
 }
-#decimal{
+
+#decimal {
   grid-area: decimal;
 }
-#equal{
-  grid-area: equal;
+
+#equals {
+  grid-area: equals;
 }
 
 
-.keys{
+.keys {
+  cursor: pointer;
   margin: .2em;
   font-family: Roboto, sans-serif;
   font-style: normal;
@@ -86,24 +91,25 @@
   font-size: 64px;
   line-height: 75px;
   text-align: center;
-  display:grid;
+  display: grid;
   grid-template-columns:repeat(4, 1fr);
   grid-template-rows: auto;
   grid-gap: 0.1em;
   grid-template-areas:
-    "ac ac divide multiply"
+    "clear clear divide multiply"
     "seven eight nine subtract "
     "four five six add"
-    "one two three equal"
-    " zero zero decimal equal"
+    "one two three equals"
+    " zero zero decimal equals"
 ;
 }
 
 
-#ac,.num,#decimal, .operator{
+#clear, .num, #decimal, .operator {
   background: #222222;
   border-radius: 10px;
   filter: drop-shadow(8px 6px 4px rgba(0, 0, 0, 0.25));
+
 }
 
 .first-section{
@@ -112,8 +118,8 @@
   background-color: blue;
 }
 
-#ac{
-color:#FF4545
+#clear {
+  color: #FF4545
 }
 
 .operator{
@@ -127,7 +133,10 @@ color:#FF4545
   background: #222222;
   border-radius: 10px;
 }
-.equal{
+.equal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: #00992B;
   border-radius: 10px;
   filter: drop-shadow(8px 6px 4px rgba(0, 0, 0, 0.25));
